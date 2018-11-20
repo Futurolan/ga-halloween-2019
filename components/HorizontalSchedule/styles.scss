@@ -1,0 +1,29 @@
+@import '../../node_modules/react-calendar-timeline/lib/Timeline';
+@import '../../node_modules/react-input-range/src/scss/index';
+
+.ga-horizontal-schedule{
+  .react-calendar-timeline .rct-sidebar-header{
+    background-color:transparent;
+  }
+  .react-calendar-timeline .rct-header .rct-label{
+    border:none;
+    background:transparent;
+  }
+  .react-calendar-timeline .rct-vertical-lines .rct-vl {
+    border-left:none;
+    &:nth-child(even) {
+      background-color: blue;
+      opacity: 0.1;
+    }
+  }
+  .rct-hl-odd{
+    background:transparent;
+  }
+  .react-calendar-timeline .rct-header .rct-label{
+    text-align:left;
+    &:before{
+      content:'';
+      padding-left:1rem;
+    }
+  }
+}
