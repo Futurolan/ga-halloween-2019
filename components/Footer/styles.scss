@@ -2,17 +2,15 @@
  &.footer{
    padding-bottom:3rem;
    .ga-footer-links{
-     a:after{
-       content : ' - '
+     a{
+       margin: 0 1rem;
      }
-     a:last-child:after{
-       content: ''
-     }
-
    }
-   .ga-footer-social-networks-links{
-     justify-content: center;
-     display: flex;
+   .ga-social-networks-links{
+
+     a{
+       margin: 0 1rem;
+     }
    }
  }
 }

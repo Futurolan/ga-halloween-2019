@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './styles.scss'
 
 const PartnerLogo = (props) => (
-  <div className='partner-logo box'>
+  <div className='partner-logo box has-text-centered'>
     <a href={props.url} target='_blank'>
       <figure>
         <img src={props.imageUrl} alt={`Logo du partenaire ${props.title}`} />

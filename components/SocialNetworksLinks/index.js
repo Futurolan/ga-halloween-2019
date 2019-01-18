@@ -16,6 +16,9 @@ class SocialNetworksLinks extends React.Component {
           {config.social.twitter && <a className='control has-text-white' target='_blank' href={config.social.twitter}>
             <i className='fab fa-twitter' />
           </a>}
+          {config.social.discord && <a className='control has-text-white' target='_blank' href={config.social.discord}>
+            <i className='fab fa-discord' />
+          </a>}
           {config.social.flickr && <a className='control has-text-white' target='_blank' href={config.social.flickr}>
             <i className='fab fa-flickr' />
           </a>}

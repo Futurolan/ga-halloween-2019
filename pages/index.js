@@ -7,6 +7,7 @@ import Meta from 'components/Meta'
 import Banner from 'components/Banner'
 import Hero from 'components/Hero'
 import TwitchCarouselActivator from 'components/TwitchCarouselActivator'
+import HomePartnersList from 'components/HomePartnersList'
 
 import config from 'config/config'
 
@@ -21,6 +22,7 @@ class HomePage extends React.Component {
           <TwitchCarouselActivator />
           <HomeInfoBlocks />
           <HomeNewsList />
+          {config.home.partners && config.home.partners.active && <HomePartnersList />}
         </div>
       </Layout>
     )

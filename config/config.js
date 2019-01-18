@@ -15,7 +15,12 @@ let config = {
       background: '/static/img/bg-blue-area.jpg'
     },
     banner: '/static/img/bg-banner-al2018.jpg',
-    twitterAccount: 'GamersAssembly'
+    twitterAccount: 'GamersAssembly',
+    partners: {
+      active: true,
+      delay: 10,
+      count: 6
+    }
   },
   news: {
     active: true,
@@ -73,7 +78,8 @@ let config = {
     facebook: 'https://www.facebook.com/GamersAssembly',
     twitch: 'https://www.flickr.com/photos/futurolan',
     youtube: 'https://twitch.tv/gamers_assembly',
-    flickr: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw'
+    flickr: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw',
+    discord: 'https://discordapp.com/invite/gamersassembly'
   }
 }
 

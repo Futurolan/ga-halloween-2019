@@ -9,7 +9,8 @@ class Platform extends React.Component {
       ps4: 'PS4',
       wii_u: 'Wii U',
       xbox_one: 'Xbox One',
-      other: 'Autre'
+      switch: 'Nintendo Switch',
+      ohter: 'Autre' // Fucking typo is in drupal backoffice ...
     }
     if (platform === 'phone') {
       return (
