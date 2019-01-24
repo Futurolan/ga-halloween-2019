@@ -81,7 +81,7 @@ class HorizontalSchedule extends React.Component {
     this.setState({
       value: value,
       visibleTimeStart: new Date(new Date('2018-11-14T00:00:00.000Z').getTime() + offset).getTime(),
-      visibleTimeEnd: new Date(new Date('2018-11-14T06:00:00.000Z').getTime() + offset).getTime(),
+      visibleTimeEnd: new Date(new Date('2018-11-14T06:00:00.000Z').getTime() + offset).getTime()
     })
   }
 
