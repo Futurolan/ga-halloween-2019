@@ -34,7 +34,8 @@ export const partners = gql`
       {field:"type",value:["partner"],operator:EQUAL},
       {field:"status",value:["1"]}
     ]},
-  sort:[{field:"field_weight",direction:ASC}]
+  sort:[{field:"field_weight",direction:ASC}],
+  limit:999
   ) {
     entities{
       ... on NodePartner{
