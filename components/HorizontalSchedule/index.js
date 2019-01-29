@@ -14,12 +14,12 @@ class HorizontalSchedule extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      visibleTimeStart: new Date('2018-11-14T00:00:00.000Z').getTime(),
-      visibleTimeEnd: new Date('2018-11-14T06:00:00.000Z').getTime(),
+      visibleTimeStart: new Date('2018-11-14T09:00:00.000Z').getTime(),
+      visibleTimeEnd: new Date('2018-11-15T02:00:00.000Z').getTime(),
       timeSteps: {
         second: 1,
         minute: 1,
-        hour: 1,
+        hour: 2,
         day: 1,
         month: 1,
         year: 1
@@ -62,7 +62,7 @@ class HorizontalSchedule extends React.Component {
 
   onTimeChange (visibleTimeStart, visibleTimeEnd, updateScrollCanvas) {
     const minTime = new Date('2018-11-14T00:00:00.000Z').getTime()
-    const maxTime = new Date('2018-11-17T00:00:00.000Z').getTime()
+    const maxTime = new Date('2018-11-14T23:00:00.000Z').getTime()
     if (visibleTimeStart < minTime && visibleTimeEnd > maxTime) {
       updateScrollCanvas(minTime, maxTime)
     } else if (visibleTimeStart < minTime) {
@@ -75,7 +75,7 @@ class HorizontalSchedule extends React.Component {
   }
 
   updateValue (value) {
-    const timelineDuration = new Date('2018-11-17T00:00:00.000Z').getTime() - new Date('2018-11-14T00:00:00.000Z').getTime()
+    const timelineDuration = new Date('2018-11-14T23:00:00.000Z').getTime() - new Date('2018-11-14T00:00:00.000Z').getTime()
     const offset = Math.round((timelineDuration * value) / 100)
 
     this.setState({
@@ -94,28 +94,23 @@ class HorizontalSchedule extends React.Component {
           <Timeline
             groups={groups}
             items={this.state.items}
-            visibleTimeStart={this.state.visibleTimeStart}
-            visibleTimeEnd={this.state.visibleTimeEnd}
+            defaultTimeStart={this.state.visibleTimeStart}
+            defaultTimeEnd={this.state.visibleTimeEnd}
             lineHeight={70}
             itemHeightRatio={0.95}
             headerLabelGroupHeight={0}
             timeSteps={this.state.timeSteps}
-            onTimeChange={this.onTimeChange}
+            //onTimeChange={this.onTimeChange}
             canResize={false}
-            canMove={false}
+            canMove
             canChangeGroup={false}
-            maxZoom={1000 * 60 * 60 * 6}
+            maxZoom={1000 * 60 * 60 * 12}
             minZoom={1000 * 60 * 60 * 6}
             sidebarContent={<div />}
           />
         </NoSSR>
 
         <div className='button' onClick={() => { this.testClick() }}>PAF</div>
-        <InputRange
-          maxValue={100}
-          minValue={0}
-          value={this.state.value}
-          onChange={this.updateValue} />
       </div>
     )
   }
