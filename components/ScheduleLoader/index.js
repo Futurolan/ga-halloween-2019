@@ -24,7 +24,7 @@ class ScheduleLoader extends React.Component {
 
   render () {
     return (
-      <div className='ga-schedule-loader container'>
+      <div className='ga-schedule-loader'>
         {this.state.windowWidth > 1024 && <HorizontalSchedule />}
         {this.state.windowWidth <= 1024 && <div>//TODO Charger le VerticalSchedule</div>}
         {this.state.windowWidth === undefined && <div>Chargement en cours</div>}

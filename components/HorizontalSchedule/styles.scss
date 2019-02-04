@@ -1,28 +1,80 @@
-@import '../../node_modules/react-calendar-timeline/lib/Timeline';
 
 .ga-horizontal-schedule{
-  .react-calendar-timeline .rct-sidebar-header{
-    background-color:transparent;
+  .vis-tooltip {
+    border: 1px solid #000;
+    border-radius: 0;
+
+    background-color: white;
+    padding: 1rem;
+    .activity-tooltip {
+      font-family: 'Roboto', sans-serif !important;
+      p {
+        margin: 0 0 0.5rem;
+      }
+    }
+
   }
-  .react-calendar-timeline .rct-header .rct-label{
-    border:none;
-    background:transparent;
+  .vis-even {
+    background-color: rgba(0, 0, 0, 0.05);
   }
-  .react-calendar-timeline .rct-vertical-lines .rct-vl {
-    border-left:none;
-    &:nth-child(even) {
-      background-color: blue;
-      opacity: 0.1;
+  .vis-labelset .vis-label {
+    background-color: #0058A2;
+    color: #ffffff;
+    .vis-inner {
+      display: flex !important;
+      align-items: center;
     }
   }
-  .rct-hl-odd{
-    background:transparent;
-  }
-  .react-calendar-timeline .rct-header .rct-label{
-    text-align:left;
-    &:before{
-      content:'';
-      padding-left:1rem;
+
+  .vis-panel.vis-left .vis-label {
+    display: flex;
+    .vis-inner {
+      margin: auto;
+      display: block;
     }
   }
+
+  .vis-item {
+    background-color: #00698f;
+    color: #ffffff;
+    cursor: pointer;
+    &.vis-range {
+      border-radius: 0px;
+    }
+
+    &.filtered {
+      opacity:0.15;
+    }
+
+    .vis-item-overflow {
+      //overflow: visible;
+      //height: 3.6rem;
+
+      .vis-item-content {
+        padding: 0;
+        display:inline;
+        //white-space: normal;
+
+      }
+    }
+  }
+  .activity {
+    .content {
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+      //height: 1.6rem;
+      font-size: 1.1rem;
+      overflow: hidden;
+    }
+    .datetime {
+      padding-left: 0.3rem;
+      padding-right:0.3rem;
+      height: 1.6rem;
+      font-size: 1rem;
+      overflow: hidden;
+    }
+
+
+  }
+
 }

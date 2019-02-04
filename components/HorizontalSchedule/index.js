@@ -1,8 +1,6 @@
 import React from 'react'
-import Timeline from 'react-calendar-timeline'
-import moment from 'moment'
 import NoSSR from 'react-no-ssr'
-import InputRange from 'react-input-range'
+import VisTimeline from 'components/VisTimeline'
 
 import './styles.scss'
 
@@ -13,104 +11,55 @@ class HorizontalSchedule extends React.Component {
    */
   constructor (props) {
     super(props)
-    this.state = {
-      visibleTimeStart: new Date('2018-11-14T09:00:00.000Z').getTime(),
-      visibleTimeEnd: new Date('2018-11-15T02:00:00.000Z').getTime(),
-      timeSteps: {
-        second: 1,
-        minute: 1,
-        hour: 2,
-        day: 1,
-        month: 1,
-        year: 1
-      },
-      items: [
-        {
-          id: 1,
-          group: 1,
-          title: 'item 1',
-          start_time: moment('2018-11-14T03:00:00.000Z'),
-          end_time: moment('2018-11-14T03:00:00.000Z').add(1, 'hour')
-        },
-        {
-          id: 2,
-          group: 2,
-          title: 'item 2',
-          start_time: moment('2018-11-14T03:00:00.000Z').add(-0.5, 'hour'),
-          end_time: moment('2018-11-14T03:00:00.000Z').add(0.5, 'hour')
-        },
-        {
-          id: 3,
-          group: 1,
-          title: 'item 3',
-          start_time: moment('2018-11-14T03:00:00.000Z').add(2, 'hour'),
-          end_time: moment('2018-11-14T03:00:00.000Z').add(6, 'hour')
-        }
-      ],
-      value: 0
-    }
-    this.testClick = this.testClick.bind(this)
-    this.updateValue = this.updateValue.bind(this)
-  }
-
-  testClick () {
-    this.setState({
-      visibleTimeStart: new Date('2018-11-14T06:00:00.000Z').getTime(),
-      visibleTimeEnd: new Date('2018-11-14T12:00:00.000Z').getTime()
-    })
-  }
-
-  onTimeChange (visibleTimeStart, visibleTimeEnd, updateScrollCanvas) {
-    const minTime = new Date('2018-11-14T00:00:00.000Z').getTime()
-    const maxTime = new Date('2018-11-14T23:00:00.000Z').getTime()
-    if (visibleTimeStart < minTime && visibleTimeEnd > maxTime) {
-      updateScrollCanvas(minTime, maxTime)
-    } else if (visibleTimeStart < minTime) {
-      updateScrollCanvas(minTime, minTime + (visibleTimeEnd - visibleTimeStart))
-    } else if (visibleTimeEnd > maxTime) {
-      updateScrollCanvas(maxTime - (visibleTimeEnd - visibleTimeStart), maxTime)
-    } else {
-      updateScrollCanvas(visibleTimeStart, visibleTimeEnd)
-    }
-  }
-
-  updateValue (value) {
-    const timelineDuration = new Date('2018-11-14T23:00:00.000Z').getTime() - new Date('2018-11-14T00:00:00.000Z').getTime()
-    const offset = Math.round((timelineDuration * value) / 100)
-
-    this.setState({
-      value: value,
-      visibleTimeStart: new Date(new Date('2018-11-14T00:00:00.000Z').getTime() + offset).getTime(),
-      visibleTimeEnd: new Date(new Date('2018-11-14T06:00:00.000Z').getTime() + offset).getTime()
-    })
+    this.state = {}
   }
 
   render () {
-    const groups = [{ id: 1, title: 'group 1' }, { id: 2, title: 'group 2' }]
+    var options = {
+      zoomMin: 1000 * 60 * 60 * 4,
+      zoomMax: 1000 * 60 * 60 * 24 * 3,
+      rollingMode: false,
+      hiddenDates: [{ start: '2018-03-31 02:00:00', end: '2018-03-31 09:00:00', repeat: 'daily' }],
+      stack: false,
+      groupOrder: function (a, b) {
+        return a.value - b.value
+      },
+      orientation: 'both',
+      margin: 4
+    }
+    const items = [{
+      start: new Date(2010, 7, 15, 10, 0, 0), // end is optional
+      end: new Date(2010, 7, 15, 16, 0, 0), // end is optional
+      content: 'Trajectory A',
+      group: 1
+    },
+    {
+      start: new Date(2010, 7, 16, 14, 0, 0), // end is optional
+      end: new Date(2010, 7, 16, 16, 0, 0), // end is optional
+      content: 'Trajectory B',
+      group: 1
 
+    },
+    {
+      start: new Date(2010, 7, 17, 14, 0, 0), // end is optional
+      end: new Date(2010, 7, 17, 22, 0, 0), // end is optional
+      content: 'Trajectory C',
+      group: 2
+
+    }]
+    const groups = [{
+      id: 3,
+      content: 'Group D'
+    },
+    {
+      id: 2,
+      content: 'Group C'
+    }]
     return (
       <div className='ga-horizontal-schedule' >
         <NoSSR onSSR={<span> Chargement du planning en cours !!!</span>}>
-          <Timeline
-            groups={groups}
-            items={this.state.items}
-            defaultTimeStart={this.state.visibleTimeStart}
-            defaultTimeEnd={this.state.visibleTimeEnd}
-            lineHeight={70}
-            itemHeightRatio={0.95}
-            headerLabelGroupHeight={0}
-            timeSteps={this.state.timeSteps}
-            //onTimeChange={this.onTimeChange}
-            canResize={false}
-            canMove
-            canChangeGroup={false}
-            maxZoom={1000 * 60 * 60 * 12}
-            minZoom={1000 * 60 * 60 * 6}
-            sidebarContent={<div />}
-          />
+          <VisTimeline options={options} items={items} groups={groups} />
         </NoSSR>
-
-        <div className='button' onClick={() => { this.testClick() }}>PAF</div>
       </div>
     )
   }
