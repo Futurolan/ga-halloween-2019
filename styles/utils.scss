@@ -1,22 +1,25 @@
-.title-line {
-  overflow: hidden;
-  &>span {
 
-    position: relative;
-    &:before, &:after {
+@include  tablet{
+  .title-line {
+    overflow: hidden;
+    &>span {
 
-      content: '';
-      position: absolute;
-      top: 50%;
-      border-bottom: 2px solid;
-      width: 1337%;
-      margin: 0 20px;
-    }
-    &:before {
-      right: 100%;
-    }
-    &:after {
-      left: 100%;
+      position: relative;
+      &:before, &:after {
+
+        content: '';
+        position: absolute;
+        top: 50%;
+        border-bottom: 2px solid;
+        width: 1337%;
+        margin: 0 20px;
+      }
+      &:before {
+        right: 100%;
+      }
+      &:after {
+        left: 100%;
+      }
     }
   }
 }

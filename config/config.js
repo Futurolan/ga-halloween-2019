@@ -59,7 +59,22 @@ let config = {
   },
   tickets: {
     title: 'Billetterie',
-    description: 'Achetez vos places pour la Gamers Assembly'
+    description: 'Achetez vos places pour la Gamers Assembly',
+    pass: {
+      title: 'Pass "Manager/Accompagnateur"',
+      text: 'Pour obtenir des pass "Manager/Accompagnateur", les équipes inscrites aux tournois peuvent réaliser une demande via le lien ci-dessous.',
+      button: 'Obtenir un pass'
+    },
+    minor: {
+      title: 'Informations pour les mineurs',
+      text: 'Vous devez télécharger l\'autorisation parentale, l\'imprimer, la remplir et l\'apporter le jour de votre venue avec votre billet.',
+      button: 'Télécharger l\'autorisation parentale (format pdf)'
+    },
+    rules: {
+      title: 'Règlement intérieur',
+      text: 'L\'acquisition d\'un ticket entraîne l\'adhésion au règlement intérieur disponible ci-dessous.',
+      button: 'Télécharger le règlement intérieur (format pdf)'
+    }
   },
   contact: {
     active: true,

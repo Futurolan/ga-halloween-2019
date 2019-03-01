@@ -21,6 +21,7 @@ class PartnerCarousel extends React.Component {
   }
 
   randomizePartner () {
+    this.setState({ partners: [] })
     this.setState({ partners: this._shuffle(this.props.partners).slice(0, config.home.partners.count) })
     setTimeout(this.randomizePartner, config.home.partners.delay * 1000)
   }

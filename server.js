@@ -129,7 +129,7 @@ app.prepare()
             const result = JSON.parse(body)
             for (const index in result.data.tournaments.entities) {
               const entity = result.data.tournaments.entities[index]
-              if (entity.url.path === req.url) {
+              if (req.url.indexOf(entity.url.path) === 0) {
                 return app.render(req, res, `/tournois-single`, { nid: entity.id })
               }
             }
@@ -149,9 +149,11 @@ app.prepare()
             next()
           } else {
             const result = JSON.parse(body)
+            console.log(body)
+            console.log(req.url)
             for (const index in result.data.news.entities) {
               const entity = result.data.news.entities[index]
-              if (entity.url.path === req.url) {
+              if (req.url.indexOf(entity.url.path) === 0) {
                 return app.render(req, res, `/news-single`, { nid: entity.id })
               }
             }

@@ -14,7 +14,6 @@ class GameType extends React.Component {
       rts: 'RTS',
       sport: 'Sport',
       versus_fighting: 'Versus fighting'
-
     }
 
     return (

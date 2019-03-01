@@ -31,13 +31,13 @@ class HorizontalSchedule extends React.Component {
       start: new Date(2010, 7, 15, 10, 0, 0), // end is optional
       end: new Date(2010, 7, 15, 16, 0, 0), // end is optional
       content: 'Trajectory A',
-      group: 1
+      group: 3
     },
     {
       start: new Date(2010, 7, 16, 14, 0, 0), // end is optional
       end: new Date(2010, 7, 16, 16, 0, 0), // end is optional
       content: 'Trajectory B',
-      group: 1
+      group: 3
 
     },
     {
@@ -49,7 +49,7 @@ class HorizontalSchedule extends React.Component {
     }]
     const groups = [{
       id: 3,
-      content: 'Group D'
+      content: 'Group avec un nom plus long'
     },
     {
       id: 2,

@@ -24,7 +24,6 @@ class Header extends React.Component {
   }
   render () {
     return (
-
       <header className='ga-header'>
         <nav className='navbar has-background-primary'>
           <div className='navbar-brand'>

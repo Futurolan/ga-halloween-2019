@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './styles.scss'
+
 class WeezeventIframe extends React.Component {
   componentDidMount () {
     const script = document.createElement('script')

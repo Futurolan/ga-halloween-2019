@@ -17,7 +17,6 @@ class Footer extends React.Component {
             {config.press.active && <ActiveLink className='has-text-white' label='Accreditation Presse' path='/espace-presse' />}
             {config.legals.active && <ActiveLink className='has-text-white' label='Mentions Légales ' path='/mentions-legales' />}
             {config.recruit.active && <ActiveLink className='has-text-white' label='Recrutement' path='/recrutement' />}
-
           </div>
           <SocialNetworksLinks />
         </div>

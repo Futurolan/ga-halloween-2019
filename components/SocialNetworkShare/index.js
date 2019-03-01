@@ -10,7 +10,7 @@ class SocialNetworkShare extends React.Component {
   render () {
     const { router, title } = this.props
     return (
-      <div className='v-social-network-links level' >
+      <div className='v-social-network-links level is-mobile' >
         <div className='level-item has-cursor-pointer'>
           <FacebookShareButton quote={title} url={`${publicRuntimeConfig.BASE_URL}${router.asPath}`} ><FacebookIcon size={32} /></FacebookShareButton>
         </div>
