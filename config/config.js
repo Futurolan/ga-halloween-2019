@@ -72,6 +72,11 @@ let config = {
     description: 'Les exposants que vous pourrez retrouver à la Gamers Assembly',
     link: '/exposants'
   },
+  family: {
+    title: 'Espace Famille',
+    description: 'Retrouver les activiter à faire en famille durant la Gamers Assembly',
+    link: '/espace-famille'
+  },
   contact: {
     active: true,
     pageId: 6

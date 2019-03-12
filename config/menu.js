@@ -6,7 +6,8 @@ const menu = [
   { type: 'config',
     id: 'info',
     children: [
-      { type: 'config', id: 'exhibitors' }
+      { type: 'config', id: 'exhibitors' },
+      { type: 'config', id: 'family' }
     ] },
   { type: 'config', id: 'partners' }
 ]
