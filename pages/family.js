@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Layout from 'components/Layout'
-import Meta from 'components/Meta'
-import FamilyActivitiesList from 'components/FamilyActivitiesList'
+import Layout from 'components/common/Layout'
+import Meta from 'components/common/Meta'
+import FamilyActivitiesList from 'components/family/FamilyActivitiesList'
 
 import config from 'config/config'
 

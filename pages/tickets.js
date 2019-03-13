@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Layout from 'components/Layout'
-import TicketContent from 'components/TicketContent'
-import Meta from 'components/Meta'
+import Layout from 'components/common/Layout'
+import TicketContent from 'components/tickets/TicketContent'
+import Meta from 'components/common/Meta'
 
 import config from 'config/config'
 

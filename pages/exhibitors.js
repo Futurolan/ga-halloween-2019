@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Layout from 'components/Layout'
-import ExhibitorList from 'components/ExhibitorList'
-import Meta from 'components/Meta'
+import Layout from 'components/common/Layout'
+import ExhibitorList from 'components/exhibitors/ExhibitorList'
+import Meta from 'components/common/Meta'
 
 import config from 'config/config'
 

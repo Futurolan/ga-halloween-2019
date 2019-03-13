@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Layout from 'components/Layout'
-import NewsList from 'components/NewsList'
-import Meta from 'components/Meta'
+import Layout from 'components/common/Layout'
+import NewsList from 'components/news/NewsList'
+import Meta from 'components/common/Meta'
 
 import config from 'config/config'
 

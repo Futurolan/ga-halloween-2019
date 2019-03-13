@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Layout from 'components/Layout'
-import NewsContent from 'components/NewsContent'
+import Layout from 'components/common/Layout'
+import NewsContent from 'components/news/NewsContent'
 
 class NewsSinglePage extends React.Component {
   static getInitialProps ({ query: { nid } }) {

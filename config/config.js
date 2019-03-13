@@ -77,6 +77,11 @@ let config = {
     description: 'Retrouver les activiter à faire en famille durant la Gamers Assembly',
     link: '/espace-famille'
   },
+  influencers: {
+    title: 'Influenceurs',
+    description: 'Les VIP qui seront présents pour la Gamers Assembly',
+    link: '/influenceurs'
+  },
   contact: {
     active: true,
     pageId: 6

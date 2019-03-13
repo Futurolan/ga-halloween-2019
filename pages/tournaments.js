@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Layout from 'components/Layout'
-import Meta from 'components/Meta'
-import TournamentList from 'components/TournamentList'
+import Layout from 'components/common/Layout'
+import Meta from 'components/common/Meta'
+import TournamentList from 'components/tournaments/TournamentList'
 
 import config from 'config/config'
 

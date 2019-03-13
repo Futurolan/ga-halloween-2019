@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Layout from 'components/Layout'
-import HomeNewsList from 'components/HomeNewsList'
-import HomeInfoBlocks from 'components/HomeInfo/index'
-import Meta from 'components/Meta'
-import Banner from 'components/Banner'
-import Hero from 'components/Hero'
-import TwitchCarouselActivator from 'components/TwitchCarouselActivator'
-import HomePartnersList from 'components/HomePartnersList'
+import Layout from 'components/common/Layout'
+import HomeNewsList from 'components/home/HomeNewsList'
+import HomeInfoBlocks from 'components/home/HomeInfo/index'
+import Meta from 'components/common/Meta'
+import Banner from 'components/home/Banner'
+import Hero from 'components/home/Hero'
+import TwitchCarouselActivator from 'components/live/TwitchCarouselActivator'
+import HomePartnersList from 'components/home/HomePartnersList'
 
 import config from 'config/config'
 
