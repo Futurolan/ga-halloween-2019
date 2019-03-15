@@ -79,12 +79,12 @@ let config = {
   },
   family: {
     title: 'Espace Famille',
-    description: 'Retrouver les activiter à faire en famille durant la Gamers Assembly',
+    description: 'Les activités à faire en famille durant la Gamers Assembly',
     link: '/espace-famille'
   },
   influencers: {
     title: 'Influenceurs',
-    description: 'Les VIP qui seront présents pour la Gamers Assembly',
+    description: 'Les personnalités qui seront présentes pour la Gamers Assembly',
     link: '/influenceurs'
   },
   contact: {
