@@ -94,6 +94,10 @@ let config = {
     active: true,
     pageId: 8
   },
+  testgp: {
+    active: true,
+    pageId: 1246
+  },
   recruit: {
     active: true,
     title: 'Recrutement',
