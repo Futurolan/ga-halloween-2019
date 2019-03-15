@@ -10,7 +10,7 @@ const menu = [
       { type: 'config', id: 'exhibitors' },
       { type: 'config', id: 'family' },
       { type: 'config', id: 'influencers' },
-      { type: 'page', title: 'Une page', id: 1256, link: '/grand-poitiers' }
+      { type: 'page', title: 'Une page', id: 1246, link: '/grand-poitiers' }
     ] },
   { type: 'config', id: 'partners' }
 ]
