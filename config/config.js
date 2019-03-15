@@ -38,7 +38,12 @@ let config = {
     link: '/tournois'
   },
   info: {
-    title: 'Informations pratiques',
+    title: 'Infos',
+    description: 'Toutes les informations sur cet évènement',
+    link: '/infos'
+  },
+  infosGA: {
+    title: 'Venir à la GA',
     description: 'Toutes les informations sur cet évènement',
     link: '/infos'
   },
@@ -74,12 +79,12 @@ let config = {
   },
   family: {
     title: 'Espace Famille',
-    description: 'Retrouver les activiter à faire en famille durant la Gamers Assembly',
+    description: 'Les activités à faire en famille durant la Gamers Assembly',
     link: '/espace-famille'
   },
   influencers: {
     title: 'Influenceurs',
-    description: 'Les VIP qui seront présents pour la Gamers Assembly',
+    description: 'Les personnalités qui seront présentes pour la Gamers Assembly',
     link: '/influenceurs'
   },
   contact: {
@@ -93,6 +98,10 @@ let config = {
   legals: {
     active: true,
     pageId: 8
+  },
+  testgp: {
+    active: true,
+    pageId: 1246
   },
   recruit: {
     active: true,

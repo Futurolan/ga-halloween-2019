@@ -6,9 +6,11 @@ const menu = [
   { type: 'config',
     id: 'info',
     children: [
+      { type: 'config', id: 'infosGA' },
       { type: 'config', id: 'exhibitors' },
       { type: 'config', id: 'family' },
-      { type: 'config', id: 'influencers' }
+      { type: 'config', id: 'influencers' },
+      { type: 'page', title: 'Une page', id: 1246, link: '/grand-poitiers' }
     ] },
   { type: 'config', id: 'partners' }
 ]
