@@ -38,11 +38,6 @@ let config = {
     link: '/tournois'
   },
   info: {
-    title: 'Infos',
-    description: 'Toutes les informations sur cet évènement',
-    link: '/infos'
-  },
-  infosGA: {
     title: 'Venir à la GA',
     description: 'Toutes les informations sur cet évènement',
     link: '/infos'

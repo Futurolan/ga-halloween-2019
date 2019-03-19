@@ -4,9 +4,9 @@ const menu = [
   { type: 'config', id: 'tickets' },
   { type: 'config', id: 'tournaments' },
   { type: 'nolink',
-    title: 'info',
+    title: 'Infos',
     children: [
-      { type: 'config', id: 'infosGA' },
+      { type: 'config', id: 'info' },
       { type: 'config', id: 'exhibitors' },
       { type: 'config', id: 'family' },
       { type: 'config', id: 'influencers' },

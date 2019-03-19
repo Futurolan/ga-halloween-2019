@@ -20,7 +20,7 @@ class ActiveLink extends React.Component {
 ActiveLink.propTypes = {
   router: PropTypes.object,
   label: PropTypes.string,
-  path: PropTypes.string,
+  path: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   as: PropTypes.string,
   className: PropTypes.string
 }
