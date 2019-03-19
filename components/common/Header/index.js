@@ -62,6 +62,14 @@ class Header extends React.Component {
       }
     }
 
+    if (item.type === 'nolink') {
+      if (item.children) {
+        return this.generateDropDown(<div className='navbar-link has-text-white is-uppercase has-text-weight-bold' >{item.title}</div>, item, index)
+      } else {
+        return <div key={index} className='navbar-item has-text-white is-uppercase has-text-weight-bold' >{item.title}</div>
+      }
+    }
+
     if (item.type === 'page') {
       if (item.link === undefined || item.id === undefined || item.title === undefined) return null
       if (item.children) {

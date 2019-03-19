@@ -3,8 +3,8 @@ const menu = [
   { type: 'config', id: 'live' },
   { type: 'config', id: 'tickets' },
   { type: 'config', id: 'tournaments' },
-  { type: 'config',
-    id: 'info',
+  { type: 'nolink',
+    title: 'info',
     children: [
       { type: 'config', id: 'infosGA' },
       { type: 'config', id: 'exhibitors' },
