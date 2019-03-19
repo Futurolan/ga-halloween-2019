@@ -40,7 +40,7 @@ function WeezeventPlayerList ({ size, reservedSlot, data: { loading, error, node
                 {object.team}
               </td>
               <td>
-                {object.pseudo}
+                {(object.pseudo && object.pseudo !== '') ? object.pseudo : <span className='is-size-7 is-italic has-text-grey-light'>Information manquante</span> }
               </td>
             </tr>
           ))}
