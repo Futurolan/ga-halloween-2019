@@ -23,43 +23,39 @@ let config = {
     }
   },
   news: {
-    active: true,
     title: 'Actualités',
-    description: 'Retrouvez toutes les actualités de la Gamers Assembly'
-  },
-  recruit: {
-    active: true,
-    title: 'Recrutement',
-    description: 'Devenir bénévole pour la GAMERS ASSEMBLY, c\'est par ici !!!',
-    formUrl: 'https://goo.gl/forms/84pHQfSp50RcuUel2'
+    description: 'Retrouvez toutes les actualités de la Gamers Assembly',
+    link: '/news'
   },
   partners: {
-    active: true,
     title: 'Partenaires',
-    description: 'Retrouvez la liste de tous nos partenaires'
+    description: 'Retrouvez la liste de tous nos partenaires',
+    link: '/partenaires'
   },
   tournaments: {
-    active: true,
     title: 'Tournois',
-    description: 'Tous les tournois de la Gamers Assembly'
+    description: 'Tous les tournois de la Gamers Assembly',
+    link: '/tournois'
   },
   info: {
-    active: true,
-    title: 'Informations pratiques',
-    description: 'Toutes les informations sur cet évènement'
+    title: 'Venir à la GA',
+    description: 'Toutes les informations sur cet évènement',
+    link: '/infos'
   },
   schedule: {
-    active: true,
     title: 'Programme',
-    description: 'Le programme heure par heure pour tout l\'évènement'
+    description: 'Le programme heure par heure pour tout l\'évènement',
+    link: '/schedule'
   },
   live: {
     title: 'Live',
-    description: 'Tous les streams et résultats en direct'
+    description: 'Tous les streams et résultats en direct',
+    link: '/live'
   },
   tickets: {
     title: 'Billetterie',
     description: 'Achetez vos places pour la Gamers Assembly',
+    link: '/billetterie',
     pass: {
       title: 'Pass "Manager/Accompagnateur"',
       text: 'Pour obtenir des pass "Manager/Accompagnateur", les équipes inscrites aux tournois peuvent réaliser une demande via le lien ci-dessous.',
@@ -76,6 +72,21 @@ let config = {
       button: 'Télécharger le règlement intérieur (format pdf)'
     }
   },
+  exhibitors: {
+    title: 'Exposants',
+    description: 'Les exposants que vous pourrez retrouver à la Gamers Assembly',
+    link: '/exposants'
+  },
+  family: {
+    title: 'Espace Famille',
+    description: 'Les activités à faire en famille durant la Gamers Assembly',
+    link: '/espace-famille'
+  },
+  influencers: {
+    title: 'VIPs',
+    description: 'Les personnalités qui seront présentes pour la Gamers Assembly',
+    link: '/vips'
+  },
   contact: {
     active: true,
     pageId: 6
@@ -87,6 +98,12 @@ let config = {
   legals: {
     active: true,
     pageId: 8
+  },
+  recruit: {
+    active: true,
+    title: 'Recrutement',
+    description: 'Devenir bénévole pour la GAMERS ASSEMBLY, c\'est par ici !!!',
+    formUrl: 'https://goo.gl/forms/84pHQfSp50RcuUel2'
   },
   social: {
     twitter: 'https://twitter.com/GamersAssembly',

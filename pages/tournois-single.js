@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Layout from 'components/Layout'
-import TournamentContent from 'components/TournamentContent'
+import Layout from 'components/common/Layout'
+import TournamentContent from 'components/tournaments/TournamentContent'
 
 class TournoisSinglePage extends React.Component {
   static getInitialProps ({ query: { nid } }) {
@@ -23,7 +23,7 @@ class TournoisSinglePage extends React.Component {
     const { nid } = this.props
     let styles = {}
     if (this.state.bg) {
-      styles = { background: `url('${this.state.bg}') center top fixed`, 'background-size': 'cover' }
+      styles = { background: `url('${this.state.bg}') center top fixed`, backgroundSize: 'cover' }
     }
     return (
       <Layout name='news-single-page has-bg-star'>

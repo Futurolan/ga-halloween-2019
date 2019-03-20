@@ -3,12 +3,26 @@ const next = require('next')
 const path = require('path')
 const sm = require('sitemap')
 const request = require('request')
-const config = require('./config/config.js')
+
+const config = require('./config/config')
+const menu = require('./config/menu')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
+
+const flatMenu = []
+for (const index in menu) {
+  const item = menu[index]
+  flatMenu.push(item)
+  if (item.children !== undefined) {
+    for (const childIndex in item.children) {
+      const child = item.children[childIndex]
+      flatMenu.push(child)
+    }
+  }
+}
 
 const sitemap = sm.createSitemap({
   hostname: process.env.BASE_URL,
@@ -18,10 +32,16 @@ const sitemap = sm.createSitemap({
   ]
 })
 
-if (config.news.active) sitemap.add({ url: '/news', changefreq: 'monthly', priority: 0.9 })
-if (config.tournaments.active) sitemap.add({ url: '/tournois', changefreq: 'monthly', priority: 0.9 })
-if (config.info.active) sitemap.add({ url: '/infos', changefreq: 'monthly', priority: 0.9 })
-if (config.partners.active) sitemap.add({ url: '/partenaires', changefreq: 'monthly', priority: 0.9 })
+for (const index in flatMenu) {
+  const item = flatMenu[index]
+  if (item.type === 'page' && item.link !== undefined && item.id !== undefined && item.title !== undefined) {
+    sitemap.add({ url: item.link, changefreq: 'monthly', priority: 0.9 })
+  }
+  if (item.type === 'config' && config[item.id] !== undefined && config[item.id].link !== undefined) {
+    sitemap.add({ url: `/${config[item.id].link}`, changefreq: 'monthly', priority: 0.9 })
+  }
+}
+
 if (config.contact.active) sitemap.add({ url: '/contacts', changefreq: 'yearly', priority: 0.5 })
 if (config.press.active) sitemap.add({ url: '/espace-presse', changefreq: 'yearly', priority: 0.5 })
 if (config.legals.active) sitemap.add({ url: '/mentions-legales', changefreq: 'yearly', priority: 0.5 })
@@ -149,8 +169,6 @@ app.prepare()
             next()
           } else {
             const result = JSON.parse(body)
-            console.log(body)
-            console.log(req.url)
             for (const index in result.data.news.entities) {
               const entity = result.data.news.entities[index]
               if (req.url.indexOf(entity.url.path) === 0) {
@@ -164,6 +182,16 @@ app.prepare()
     })
 
     server.get('*', (req, res) => {
+      for (const index in flatMenu) {
+        const item = flatMenu[index]
+        if (item.type === 'page' && item.id !== undefined && item.link !== undefined && req.url.indexOf(item.link) === 0) {
+          return app.render(req, res, `/page`, { nid: item.id })
+        }
+        if (item.type === 'config' && item.id !== undefined && config[item.id] !== undefined && config[item.id].link !== undefined && req.url.indexOf(config[item.id].link) === 0) {
+          return app.render(req, res, `/${item.id}`)
+        }
+      }
+
       return handle(req, res)
     })
 

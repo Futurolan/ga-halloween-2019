@@ -1,8 +1,8 @@
 import React from 'react'
 import ErrorPage from 'next/error'
 
-import Layout from 'components/Layout'
-import Meta from 'components/Meta'
+import Layout from 'components/common/Layout'
+import Meta from 'components/common/Meta'
 
 import config from 'config/config'
 

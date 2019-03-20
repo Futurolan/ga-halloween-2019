@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from 'components/Layout'
-import Meta from 'components/Meta'
-import TwitchList from 'components/TwitchList'
-import ToornamentResults from 'components/ToornamentResults'
+import Layout from 'components/common/Layout'
+import Meta from 'components/common/Meta'
+import TwitchList from 'components/live/TwitchList'
+import ToornamentResults from 'components/tournaments/ToornamentResults'
 
 import config from 'config/config'
 
