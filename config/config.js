@@ -78,9 +78,9 @@ let config = {
     link: '/espace-famille'
   },
   influencers: {
-    title: 'Influenceurs',
+    title: 'VIPs',
     description: 'Les personnalités qui seront présentes pour la Gamers Assembly',
-    link: '/influenceurs'
+    link: '/vips'
   },
   contact: {
     active: true,
@@ -93,10 +93,6 @@ let config = {
   legals: {
     active: true,
     pageId: 8
-  },
-  testgp: {
-    active: true,
-    pageId: 1246
   },
   recruit: {
     active: true,
