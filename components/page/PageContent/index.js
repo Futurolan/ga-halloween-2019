@@ -6,6 +6,8 @@ import getConfig from 'next/config'
 
 import Meta from 'components/common/Meta'
 
+import './styles.scss'
+
 const { publicRuntimeConfig } = getConfig()
 
 function PageContent ({ data: { loading, error, node } }) {
