@@ -1,36 +1,71 @@
 import React from 'react'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
+import PropTypes from 'prop-types'
+import getConfig from 'next/config'
 
-import HorizontalSchedule from 'components/schedule/HorizontalSchedule'
+import ScheduleResponsiveSwitch from '../ScheduleResponsiveSwitch'
 
-import './styles.scss'
+const { publicRuntimeConfig } = getConfig()
 
-class ScheduleLoader extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { windowWidth: undefined }
+function ScheduleLoader ({ data: { loading, error, nodeQuery } }) {
+  if (error) {
+    return <div className='notification is-danger'>Une erreur est survenue pendant le chargement</div>
   }
 
-  handleResize = () => this.setState({
-    windowWidth: window.innerWidth
-  })
+  if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length === 1) {
+    // Parse result in simplier
 
-  componentDidMount () {
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
+    return <ScheduleResponsiveSwitch data={nodeQuery.entities[0].stages} />
   }
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.handleResize)
-  }
-
-  render () {
-    return (
-      <div className='ga-schedule-loader'>
-        {this.state.windowWidth > 1024 && <HorizontalSchedule />}
-        {this.state.windowWidth <= 1024 && <div>//TODO Charger le VerticalSchedule</div>}
-        {this.state.windowWidth === undefined && <div>Chargement en cours</div>}
-      </div>
-    )
-  }
+  return <div className='notification'>Chargement en cours.</div>
 }
 
-export default ScheduleLoader
+export const partners = gql`
+query{
+  nodeQuery(
+  filter:{
+    conditions:[
+      {field: "field_schedule_edition", value: ["${publicRuntimeConfig.EDITION_ID}"]}
+      {field:"type",value:["schedule"],operator:EQUAL},
+      {field:"status",value:["1"]}
+    ]},
+  sort:[{field:"created",direction:DESC}],
+  limit:1) {
+    entities {
+      ... on NodeSchedule{
+        stages:fieldScheduleActivityGroup{
+          stage:entity{
+            ... on ParagraphScheduleActivityGroup{
+              id
+              title:fieldScheduleActivityGroupNa
+              activities:fieldScheduleActivityGroupAc{
+                activity:entity{
+                  ... on ParagraphScheduleActivity{
+                    id
+                    title:fieldScheduleActivityTitle
+                    url:fieldScheduleActivityLink
+                    description:fieldScheduleActivityDescript{
+                      processed
+                    }
+                    date:fieldScheduleActivityDate{
+                      startDate
+                      endDate
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      
+      }
+    }
+  }
+}`
+
+ScheduleLoader.propTypes = {
+  data: PropTypes.object
+}
+
+export default graphql(partners)(ScheduleLoader)

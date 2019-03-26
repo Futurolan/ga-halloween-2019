@@ -32,8 +32,8 @@ const eventPropTypes = {}
 const eventDefaultProps = {}
 
 each(events, event => {
-  ;(eventPropTypes[event] = PropTypes.func),
-  (eventDefaultProps[`${event}Handler`] = noop)
+  eventPropTypes[event] = PropTypes.func
+  eventDefaultProps[`${event}Handler`] = noop
 })
 
 export default class Timeline extends Component {
@@ -73,13 +73,7 @@ export default class Timeline extends Component {
     const customTimesChange = customTimes !== nextProps.customTimes
     const selectionChange = selection !== nextProps.selection
 
-    return (
-      itemsChange ||
-			groupsChange ||
-			optionsChange ||
-			customTimesChange ||
-			selectionChange
-    )
+    return (itemsChange || groupsChange || optionsChange || customTimesChange || selectionChange)
   }
 
   init () {
@@ -158,12 +152,13 @@ export default class Timeline extends Component {
   }
 }
 
-Timeline.propTypes = assign(
+Timeline.propTypes =
   {
     items: PropTypes.array,
     groups: PropTypes.array,
     options: PropTypes.object,
     selection: PropTypes.array,
+    selectionOptions: PropTypes.object,
     customTimes: PropTypes.shape({
       datetime: PropTypes.instanceOf(Date),
       id: PropTypes.string
@@ -174,9 +169,7 @@ Timeline.propTypes = assign(
       PropTypes.instanceOf(Date),
       PropTypes.number
     ])
-  },
-  eventPropTypes
-)
+  }
 
 Timeline.defaultProps = assign(
   {

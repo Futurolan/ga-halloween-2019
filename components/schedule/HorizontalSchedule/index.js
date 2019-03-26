@@ -3,6 +3,7 @@ import NoSSR from 'react-no-ssr'
 import VisTimeline from 'components/schedule/VisTimeline'
 
 import './styles.scss'
+import PropTypes from 'prop-types'
 
 class HorizontalSchedule extends React.Component {
   /*
@@ -11,58 +12,57 @@ class HorizontalSchedule extends React.Component {
    */
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = { groups: [], items: [] }
+  }
+
+  componentDidMount () {
+    let groups = []
+    let items = []
+    for (let stageIndex in this.props.data) {
+      const stage = this.props.data[stageIndex].stage
+      groups.push({ content: stage.title, id: stageIndex })
+      for (let activityIndex in stage.activities) {
+        const activity = stage.activities[activityIndex].activity
+        items.push({
+          start: new Date(activity.date.startDate),
+          end: new Date(activity.date.endDate),
+          group: stageIndex,
+          content: activity.title,
+          id: activity.id,
+          style: 'background-color:red'
+        })
+      }
+    }
+    this.setState({ groups: groups, items: items })
+  }
+  test (e) {
+    console.log(e)
   }
 
   render () {
     var options = {
       zoomMin: 1000 * 60 * 60 * 4,
       zoomMax: 1000 * 60 * 60 * 24 * 3,
-      rollingMode: false,
       hiddenDates: [{ start: '2018-03-31 02:00:00', end: '2018-03-31 09:00:00', repeat: 'daily' }],
       stack: false,
-      groupOrder: function (a, b) {
-        return a.value - b.value
-      },
       orientation: 'both',
-      margin: 4
+      margin: 4,
+      selectable: false
     }
-    const items = [{
-      start: new Date(2010, 7, 15, 10, 0, 0), // end is optional
-      end: new Date(2010, 7, 15, 16, 0, 0), // end is optional
-      content: 'Trajectory A',
-      group: 3
-    },
-    {
-      start: new Date(2010, 7, 16, 14, 0, 0), // end is optional
-      end: new Date(2010, 7, 16, 16, 0, 0), // end is optional
-      content: 'Trajectory B',
-      group: 3
 
-    },
-    {
-      start: new Date(2010, 7, 17, 14, 0, 0), // end is optional
-      end: new Date(2010, 7, 17, 22, 0, 0), // end is optional
-      content: 'Trajectory C',
-      group: 2
-
-    }]
-    const groups = [{
-      id: 3,
-      content: 'Group avec un nom plus long'
-    },
-    {
-      id: 2,
-      content: 'Group C'
-    }]
+    const { groups, items } = this.state
     return (
       <div className='ga-horizontal-schedule' >
         <NoSSR onSSR={<span> Chargement du planning en cours !!!</span>}>
-          <VisTimeline options={options} items={items} groups={groups} />
+          <VisTimeline options={options} items={items} groups={groups} clickHandler={(e) => this.test(e)} />
         </NoSSR>
       </div>
     )
   }
+}
+
+HorizontalSchedule.propTypes = {
+  data: PropTypes.array
 }
 
 export default HorizontalSchedule
