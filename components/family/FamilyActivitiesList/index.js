@@ -33,7 +33,7 @@ function FamilyActivitiesList ({ data: { loading, error, nodeQuery } }) {
   return <div className='notification'>Chargement des activités famille en cours.</div>
 }
 
-export const partners = gql`
+export const query = gql`
 {
   nodeQuery(
   filter:{
@@ -77,4 +77,4 @@ FamilyActivitiesList.propTypes = {
   data: PropTypes.object
 }
 
-export default graphql(partners)(FamilyActivitiesList)
+export default graphql(query)(FamilyActivitiesList)

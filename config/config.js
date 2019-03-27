@@ -42,6 +42,11 @@ let config = {
     description: 'Toutes les informations sur cet évènement',
     link: '/infos'
   },
+  schedule: {
+    title: 'Programme',
+    description: 'Le programme heure par heure pour tout l\'évènement',
+    link: '/schedule'
+  },
   live: {
     title: 'Live',
     description: 'Tous les streams et résultats en direct',

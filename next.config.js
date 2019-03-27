@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const withPlugins = require('next-compose-plugins')
 const sass = require('@zeit/next-sass')
+const css = require('@zeit/next-css')
 const optimizedImages = require('next-optimized-images')
 
 const nextConfig = {
@@ -43,6 +44,7 @@ const nextConfig = {
 
 module.exports = withPlugins([
   [sass],
+  [css],
   [optimizedImages, {
     handleImages: ['png', 'jpg'],
     mozjpeg: {

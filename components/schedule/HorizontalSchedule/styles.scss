@@ -1,0 +1,36 @@
+@import '../../../styles/color';
+
+.ga-horizontal-schedule{
+
+
+  .vis-even {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .vis-labelset {
+
+    .vis-label, .vis-inner {
+      background-color: #0058A2;
+      color: #FFF;
+      height: 3rem;
+      display:flex;
+      align-items: center;
+    }
+    .vis-inner{
+      margin:0 1rem;
+    }
+
+  }
+
+  .vis-item {
+    background-color:$primary;
+    .vis-item-content {
+      cursor: pointer;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      color:#FFF;
+
+    }
+  }
+}
