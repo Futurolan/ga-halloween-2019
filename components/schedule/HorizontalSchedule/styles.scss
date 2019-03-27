@@ -1,5 +1,7 @@
+@import '../../../styles/color';
 
 .ga-horizontal-schedule{
+
 
   .vis-even {
     background-color: rgba(0, 0, 0, 0.05);
@@ -21,12 +23,14 @@
   }
 
   .vis-item {
-
+    background-color:$primary;
     .vis-item-content {
       cursor: pointer;
       height: 3rem;
       display: flex;
       align-items: center;
+      color:#FFF;
+
     }
   }
 }

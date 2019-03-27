@@ -52,6 +52,25 @@ query{
                       startDate
                       endDate
                     }
+                    tournament:fieldScheduleActivityTourname{
+                      entity{
+                        ... on NodeTournament{
+                          nid
+                          title
+                           url: entityUrl {
+                            path
+                          }
+                          game:fieldTournamentGame{
+                            entity{
+                              ... on NodeGame{
+                                color:fieldGameColor
+                                shortName:fieldGameShortName
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
