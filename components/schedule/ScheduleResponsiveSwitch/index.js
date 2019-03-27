@@ -25,7 +25,7 @@ class ScheduleResponsiveSwitch extends React.Component {
     return (
       <div className='ga-schedule-responsive-switch'>
         {this.state.windowWidth > 1024 && <HorizontalSchedule data={this.props.data} />}
-        {this.state.windowWidth <= 1024 && <div>//TODO Charger le VerticalSchedule</div>}
+        {this.state.windowWidth <= 1024 && <div>Version Mobile en cours de développement</div>}
         {this.state.windowWidth === undefined && <div>Chargement en cours</div>}
       </div>
     )
