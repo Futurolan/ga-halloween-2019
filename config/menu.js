@@ -12,7 +12,8 @@ const menu = [
       { type: 'config', id: 'family' },
       { type: 'config', id: 'influencers' },
       { type: 'page', title: 'Une page', id: 1246, link: '/grand-poitiers' },
-      { type: 'page', title: 'Cosplay', id: 2673, link: '/cosplay' }
+      { type: 'page', title: 'Cosplay', id: 2673, link: '/cosplay' },
+      { type: 'page', title: 'Les Offs', id: 2727, link: '/offs' }
     ] },
   { type: 'config', id: 'partners' }
 ]
