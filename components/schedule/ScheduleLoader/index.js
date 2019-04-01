@@ -49,8 +49,8 @@ query{
                       processed
                     }
                     date:fieldScheduleActivityDate{
-                      startDate
-                      endDate
+                      startDate:value
+                      endDate:endValue
                     }
                     tournament:fieldScheduleActivityTourname{
                       entity{
