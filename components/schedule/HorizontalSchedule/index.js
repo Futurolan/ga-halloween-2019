@@ -30,7 +30,7 @@ class HorizontalSchedule extends React.Component {
           group: stageIndex,
           content: activity.title,
           id: activity.id,
-          description: activity.description.processed,
+          description: activity.description ? activity.description.processed : '',
           url: activity.url
         }
         if (activity.tournament && activity.tournament.entity && activity.tournament.entity.nid && activity.tournament.entity.title) {
