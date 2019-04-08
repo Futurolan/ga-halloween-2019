@@ -1,6 +1,6 @@
 @import '../../../node_modules/bulma/sass/utilities/all';
 
-.ga-twitch-carousel{
+.ga-stream-carousel{
   .next,.previous{
     font-size:5rem;
     position:absolute;
@@ -33,7 +33,7 @@
     }
 
   }
-  .ga-twitch-carousel-content {
+  .ga-stream-carousel-content {
     margin:2rem;
     position:relative;
 
@@ -44,7 +44,7 @@
       height: 360px;
     }
     &.is-single{
-      .ga-twitch-carousel-player-item {
+      .ga-stream-carousel-player-item {
         position: absolute;
         transition: all 450ms ease 0s;
         opacity: 0;
@@ -68,11 +68,12 @@
 
         @include desktop {
           left: calc(50% - 320px);
+          width: 60%;
         }
       }
     }
     &:not(.is-single) {
-      .ga-twitch-carousel-player-item {
+      .ga-stream-carousel-player-item {
         position: absolute;
         transition: all 450ms ease 0s;
         opacity: 0;
@@ -102,7 +103,7 @@
             opacity: 1;
           }
         }
-        @include desktop {
+        @include desktop{
 
           width: 640px;
           left: auto;
@@ -155,7 +156,7 @@
     }
 
   }
-  .ga-twitch-carousel-button{
+  .ga-stream-carousel-button{
     padding:0 1rem 2rem 1rem;
   }
 
