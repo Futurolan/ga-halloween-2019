@@ -14,6 +14,7 @@ class LivePage extends React.Component {
           <Meta title={config.live.title} description={config.live.description} />
           <div className='container'>
             <h1 className='title title-line has-text-centered'><span>{config.live.title}</span></h1>
+
             <StreamLoader />
             <ToornamentResults />
           </div>
