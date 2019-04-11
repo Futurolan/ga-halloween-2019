@@ -84,7 +84,7 @@ class Header extends React.Component {
       if (item.children) {
         return this.generateDropDown(<a href={item.link} target='_blank' className='navbar-link has-text-white is-uppercase has-text-weight-bold'>{item.title}</a>, item, index)
       } else {
-        return <a href={item.link} target='_blank' className='navbar-item has-text-white is-uppercase has-text-weight-bold'>{item.title}</a>
+        return <a key={index} href={item.link} target='_blank' className='navbar-item has-text-white is-uppercase has-text-weight-bold'>{item.title}</a>
       }
     }
 
