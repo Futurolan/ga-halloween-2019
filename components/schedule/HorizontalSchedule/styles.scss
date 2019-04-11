@@ -3,28 +3,28 @@
 .ga-horizontal-schedule{
 
 
-  .vis-even {
+  .timeline-even {
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-  .vis-labelset {
+  .timeline-labelset {
 
-    .vis-label, .vis-inner {
+    .timeline-label, .timeline-inner {
       background-color: #0058A2;
       color: #FFF;
       height: 3rem;
       display:flex;
       align-items: center;
     }
-    .vis-inner{
+    .timeline-inner{
       margin:0 1rem;
     }
 
   }
 
-  .vis-item {
+  .timeline-item {
     background-color:$primary;
-    .vis-item-content {
+    .timeline-item-content {
       cursor: pointer;
       height: 3rem;
       display: flex;
@@ -32,5 +32,15 @@
       color:#FFF;
 
     }
+  }
+
+  .button{
+    opacity:0.7;
+    &.is-active, &:hover{
+      opacity:1;
+    }
+  }
+  .card-content{
+    padding:1rem 0;
   }
 }

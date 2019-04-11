@@ -2,6 +2,7 @@ import React from 'react'
 
 import HorizontalSchedule from 'components/schedule/HorizontalSchedule'
 import PropTypes from 'prop-types'
+import VerticalSchedule from '../VerticalSchedule'
 
 class ScheduleResponsiveSwitch extends React.Component {
   constructor (props) {
@@ -25,7 +26,7 @@ class ScheduleResponsiveSwitch extends React.Component {
     return (
       <div className='ga-schedule-responsive-switch'>
         {this.state.windowWidth > 1024 && <HorizontalSchedule data={this.props.data} />}
-        {this.state.windowWidth <= 1024 && <div>Version Mobile en cours de développement</div>}
+        {this.state.windowWidth <= 1024 && <VerticalSchedule data={this.props.data} />}
         {this.state.windowWidth === undefined && <div>Chargement en cours</div>}
       </div>
     )

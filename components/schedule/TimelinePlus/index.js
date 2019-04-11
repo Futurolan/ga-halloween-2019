@@ -1,5 +1,5 @@
-import vis from 'vis/dist/vis-timeline-graph2d.min'
-import 'vis/dist/vis-timeline-graph2d.min.css'
+import { Timeline, DataSet } from 'timeline-plus/dist/timeline.js'
+import 'timeline-plus/dist/timeline.css'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import difference from 'lodash/difference'
@@ -36,9 +36,10 @@ each(events, event => {
   eventDefaultProps[`${event}Handler`] = noop
 })
 
-export default class Timeline extends Component {
+export default class TimelinePlus extends Component {
   constructor (props) {
     super(props)
+
     this.state = {
       customTimes: []
     }
@@ -50,8 +51,7 @@ export default class Timeline extends Component {
 
   componentDidMount () {
     const { container } = this.refs
-
-    this.$el = new vis.Timeline(container, undefined, this.props.options)
+    this.$el = new Timeline(container, undefined, this.props.options)
 
     events.forEach(event => {
       this.$el.on(event, this.props[`${event}Handler`])
@@ -103,7 +103,7 @@ export default class Timeline extends Component {
     this.$el.setOptions(timelineOptions)
 
     if (groups.length > 0) {
-      const groupsDataset = new vis.DataSet()
+      const groupsDataset = new DataSet()
       groupsDataset.add(groups)
       this.$el.setGroups(groupsDataset)
     }
@@ -152,7 +152,7 @@ export default class Timeline extends Component {
   }
 }
 
-Timeline.propTypes =
+TimelinePlus.propTypes =
   {
     items: PropTypes.array,
     groups: PropTypes.array,
@@ -171,7 +171,7 @@ Timeline.propTypes =
     ])
   }
 
-Timeline.defaultProps = assign(
+TimelinePlus.defaultProps = assign(
   {
     items: [],
     groups: [],
