@@ -5,6 +5,7 @@ import VisTimeline from 'components/schedule/VisTimeline'
 import './styles.scss'
 import PropTypes from 'prop-types'
 import Moment from 'react-moment'
+import moment from 'moment'
 import Link from 'next/link'
 
 class HorizontalSchedule extends React.Component {
@@ -25,8 +26,8 @@ class HorizontalSchedule extends React.Component {
       for (let activityIndex in stage.activities) {
         const activity = stage.activities[activityIndex].activity
         let item = {
-          start: new Date(activity.date.startDate),
-          end: new Date(activity.date.endDate),
+          start: moment.utc(activity.date.startDate).toDate(),
+          end: moment.utc(activity.date.endDate).toDate(),
           group: stageIndex,
           content: activity.title,
           id: activity.id,
