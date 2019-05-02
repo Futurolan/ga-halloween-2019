@@ -14,7 +14,7 @@ let config = {
     //   subtitle: 'Dev Front',
     //   background: '/static/img/bg-blue-area.jpg'
     // },
-    banner: '/static/img/banner.png',
+    banner: '/static/img/banner.jpg',
     twitterAccount: 'OccitanieEsport',
     partners: {
       active: true,
