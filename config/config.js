@@ -1,6 +1,6 @@
 let config = {
   title: 'Gamers Assembly : Dev Front',
-  logo: `/static/img/logo-orange-100x100.png`,
+  logo: `/static/img/blason2-100x100.png`,
   description: 'Retrouvez la Gamers Assembly très prochainement',
   metaImagePath: `/static/img/blason2-100x100.png`,
   gaTrackingId: 'UA-0000000-0',
