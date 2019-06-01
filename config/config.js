@@ -1,21 +1,21 @@
 let config = {
   title: 'Gamers Assembly : Dev Front',
-  logo: `/static/img/blason2-100x100.png`,
+  logo: `/static/img/logo-orange-100x100.png`,
   description: 'Retrouvez la Gamers Assembly très prochainement',
-  metaImagePath: `/static/img/blason2-100x100.png`,
+  metaImagePath: `/static/img/logo-orange-200x200.png`,
   gaTrackingId: 'UA-0000000-0',
   mainPartner: {
-    logo: '/static/img/logo-occitanie-238x106.png',
-    url: 'https://www.laregion.fr/'
+    logo: '/static/img/charente-maritime.png',
+    url: 'https://bmagic.fr'
   },
   home: {
-    // hero: {
-    //   title: 'Gamers Assembly',
-    //   subtitle: 'Dev Front',
-    //   background: '/static/img/bg-blue-area.jpg'
-    // },
-    banner: '/static/img/banner.jpg',
-    twitterAccount: 'OccitanieEsport',
+    hero: {
+      title: 'Gamers Assembly',
+      subtitle: 'Dev Front',
+      background: '/static/img/bg-blue-area.jpg'
+    },
+    banner: '/static/img/bg-banner-al2018.jpg',
+    twitterAccount: 'GamersAssembly',
     partners: {
       active: true,
       delay: 10,
