@@ -1,16 +1,14 @@
 import React from 'react'
-import { graphql } from 'react-apollo'
+import { graphql } from 'react-apollo/index'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
 import getConfig from 'next/config'
 
-import ToornamentIframe from 'components/common/ToornamentIframe'
-
-import './styles.scss'
+import ToornamentResults from '../ToornamentResults'
 
 const { publicRuntimeConfig } = getConfig()
 
-function ToornamentResults ({
+function ToornamentResultsLoader ({
   data: { loading, error, nodeQuery }
 }) {
   if (error) {
@@ -21,22 +19,7 @@ function ToornamentResults ({
   }
 
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0) {
-    return <div className='ga-toornament-results'>
-      <div className='panel'>
-        <div className='panel-heading has-background-primary has-text-white'>
-          <i className='fas fa-trophy' />&nbsp;Résultats
-        </div>
-        <div className='panel-container has-background-white'>
-          <div className='columns is-multiline'>
-            {nodeQuery.entities.map((tournament) => (
-              <div className='column is-12' key={tournament.nid}>
-                <ToornamentIframe id={tournament.toornamentId} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    return <ToornamentResults toornaments={nodeQuery.entities} />
   }
   return null
 }
@@ -64,8 +47,8 @@ export const tournaments = gql`
 }
 `
 
-ToornamentResults.propTypes = {
+ToornamentResultsLoader.propTypes = {
   data: PropTypes.object
 }
 
-export default graphql(tournaments)(ToornamentResults)
+export default graphql(tournaments)(ToornamentResultsLoader)

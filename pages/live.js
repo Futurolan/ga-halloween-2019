@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from 'components/common/Layout'
 import Meta from 'components/common/Meta'
 import StreamLoader from 'components/live/StreamLoader'
-import ToornamentResults from 'components/tournaments/ToornamentResults'
+import ToornamentResults from 'components/live/ToornamentResultsLoader'
 
 import config from 'config/config'
 
