@@ -1,30 +1,25 @@
 let config = {
-  title: 'Gamers Assembly : Dev Front',
+  title: 'Gamers Assembly : Halloween Edition 2018',
   logo: `/static/img/logo-orange-100x100.png`,
-  description: 'Retrouvez la Gamers Assembly prochainement',
+  description: 'L\'édition 2018 de la Gamers Assembly Halloween Edition aura lieu du ?? au ?? novembre à la salle de spectacle de la Hune -Saint - Benoît(86)',
   metaImagePath: `/static/img/logo-orange-200x200.png`,
-  gaTrackingId: 'UA-0000000-0',
+  gaTrackingId: 'UA-128777022-2',
   mainPartner: {
-    logo: '/static/img/charente-maritime.png',
-    url: 'https://bmagic.fr'
+    logo: '/static/img/logo_st_benoit.jpg',
+    url: 'http://www.ville-saint-benoit.fr/'
   },
   home: {
-    hero: {
-      title: 'Gamers Assembly',
-      subtitle: 'Dev Front',
-      background: '/static/img/bg-blue-area.jpg'
-    },
-    banner: '/static/img/bg-banner-al2018.jpg',
+    banner: '/static/img/bg-halloween-v1.png',
     twitterAccount: 'GamersAssembly',
     partners: {
-      active: true,
+      active: false,
       delay: 10,
       count: 6
     }
   },
   news: {
     title: 'Actualités',
-    description: 'Retrouvez toutes les actualités de la Gamers Assembly',
+    description: 'Retrouvez toutes les actualités de la Gamers Assembly Halloween Edition 2019',
     link: '/news'
   },
   partners: {
@@ -34,7 +29,7 @@ let config = {
   },
   tournaments: {
     title: 'Tournois',
-    description: 'Tous les tournois de la Gamers Assembly',
+    description: 'Tous les tournois de la Gamers Assembly Halloween Edition 2019',
     link: '/tournois'
   },
   info: {
@@ -54,7 +49,7 @@ let config = {
   },
   tickets: {
     title: 'Billetterie',
-    description: 'Achetez vos places pour la Gamers Assembly',
+    description: 'Achetez vos places pour la Gamers Assembly Halloween Edition 2019',
     link: '/billetterie',
     pass: {
       title: 'Pass "Manager/Accompagnateur"',
@@ -100,7 +95,7 @@ let config = {
     pageId: 8
   },
   recruit: {
-    active: true,
+    active: false,
     title: 'Recrutement',
     description: 'Devenir bénévole pour la GAMERS ASSEMBLY, c\'est par ici !!!',
     formUrl: 'https://goo.gl/forms/84pHQfSp50RcuUel2'
