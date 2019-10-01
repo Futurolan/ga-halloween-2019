@@ -1,7 +1,7 @@
 let config = {
   title: 'Gamers Assembly : Halloween Edition 2019',
   logo: `/static/img/logo-orange-100x100.png`,
-  description: 'L\'édition 2018 de la Gamers Assembly Halloween Edition aura lieu du 08 au 11 novembre à la salle de spectacle de la Hune -Saint - Benoît(86)',
+  description: 'L\'édition 2019 de la Gamers Assembly Halloween Edition aura lieu du 08 au 11 novembre à la salle de spectacle de la Hune -Saint - Benoît(86)',
   metaImagePath: `/static/img/logo-orange-200x200.png`,
   gaTrackingId: 'UA-128777022-7',
   mainPartner: {
@@ -87,7 +87,7 @@ let config = {
     pageId: 6
   },
   press: {
-    active: true,
+    active: false,
     pageId: 7
   },
   legals: {
@@ -103,9 +103,9 @@ let config = {
   social: {
     twitter: 'https://twitter.com/GamersAssembly',
     facebook: 'https://www.facebook.com/GamersAssembly',
-    twitch: 'https://www.flickr.com/photos/futurolan',
-    youtube: 'https://twitch.tv/gamers_assembly',
-    flickr: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw',
+    twitch: 'https://twitch.tv/gamers_assembly',
+    youtube: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw',
+    flickr: 'https://www.flickr.com/photos/futurolan',
     discord: 'https://discordapp.com/invite/gamersassembly'
   }
 }
