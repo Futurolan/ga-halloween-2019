@@ -9,7 +9,7 @@ let config = {
     url: 'http://www.ville-saint-benoit.fr/'
   },
   home: {
-    banner: '/static/img/bg-halloween-v1.png',
+    // banner: '/static/img/bg-halloween-v1.png',
     twitterAccount: 'GamersAssembly',
     partners: {
       active: false,
