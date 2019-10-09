@@ -52,9 +52,9 @@ let config = {
     description: 'Achetez vos places pour la Gamers Assembly Halloween Edition 2019',
     link: '/billetterie',
     pass: {
-      title: 'Pass "Manager/Accompagnateur"',
-      text: 'Pour obtenir des pass "Manager/Accompagnateur", les équipes inscrites aux tournois peuvent réaliser une demande via le lien ci-dessous.',
-      button: 'Obtenir un pass'
+      title: 'Location de matériel',
+      text: 'Pour louer du matériel (écran, PC, chaise, ...), rendez-vous sur la billetterie de notre partenaire SCOUP Esport !',
+      button: 'Billetterie SCOUP'
     },
     minor: {
       title: 'Informations pour les mineurs',
