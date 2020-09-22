@@ -9,7 +9,7 @@ let config = {
     url: 'http://www.ville-saint-benoit.fr/'
   },
   home: {
-    banner: '/static/img/gahe2019.png',
+    banner: '/static/img/banner.png',
     twitterAccount: 'GamersAssembly',
     partners: {
       active: false,
